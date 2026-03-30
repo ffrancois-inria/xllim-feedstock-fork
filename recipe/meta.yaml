@@ -10,7 +10,7 @@ source:
   sha256: c9728a33931ffa7df7e0f2f5bfab9899aaa1085a1f2cb77c6d69703fb2847fc5
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py<311 or py>=313]  # >=3.11 requirement from NumPy 2, <3.13 from CARMA 
@@ -21,6 +21,10 @@ requirements:
     - {{ stdlib("c") }}
     - cmake >=3.21
     - ninja
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
 
   host:
     - python # Build python versions should not be constrained here
