@@ -1,5 +1,5 @@
 {% set name = "xllim" %}
-{% set version = "2.0.10" %}
+{% set version = "2.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/x/xllim/xllim-{{ version }}.tar.gz
-  sha256: c1e911e5569e150255e3823a15901bcfb3719c056ae11033c00d1e2a2849d405
+  sha256: 7f7f025f5699a427bc8fa5d3ec7ab9fdac487937fa0cc0d89585554215c6c5c0
 
 build:
   number: 1
